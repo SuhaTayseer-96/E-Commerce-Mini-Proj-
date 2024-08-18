@@ -1,0 +1,104 @@
+﻿@model E_Commerce__Mini_Proj_.Models.User
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="profile-container">
+    <div class="profile-header">
+        <h1>@ViewBag.Title</h1>
+    </div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.UserName)</dt>
+        <dd>@Html.DisplayFor(model => model.UserName)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Email)</dt>
+        <dd>@Html.DisplayFor(model => model.Email)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Password)</dt>
+        <dd>@Html.DisplayFor(model => model.Password)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Address)</dt>
+        <dd>@Html.DisplayFor(model => model.Address)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.PhoneNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.PhoneNumber)</dd>
+    </dl>
+    <div class="profile-actions">
+        @Html.ActionLink("Edit", "EditProfile", new { id = Model.UserID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>
+<style>
+    /* Profile Page Styles */
+    .profile-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .profile-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+        .profile-header h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+    .dl-horizontal {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+        .dl-horizontal dt {
+            flex: 0 0 30%;
+            font-weight: bold;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+        }
+
+        .dl-horizontal dd {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin: 0;
+            background-color: #fff;
+        }
+
+        .dl-horizontal dt,
+        .dl-horizontal dd {
+            margin-bottom: 10px;
+        }
+
+        .dl-horizontal dt {
+            margin-right: 10px;
+        }
+
+    .profile-actions {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .profile-actions a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+            .profile-actions a:hover {
+                text-decoration: underline;
+            }
+
+    hr {
+        border: 1px solid #ddd;
+        margin: 20px 0;
+    }
+
+</style>

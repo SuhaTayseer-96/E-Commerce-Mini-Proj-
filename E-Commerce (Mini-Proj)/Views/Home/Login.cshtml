@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+
+    Layout = "/Views/Shared/_Layout.cshtml";
+
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title  -->
+    <title>Home</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href=@Url.Content("/Content/img/core-img/favicon.ico")>
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href=@Url.Content("/Content/css/core-style.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/style.css")>
+</head>
+<body>
+    <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
+    <script src=@Url.Content("/Content/js/jquery/jquery-2.2.4.min.js")></script>
+    <!-- Popper js -->
+    <script src=@Url.Content("/Content/js/popper.min.js")></script>
+    <!-- Bootstrap js -->
+    <script src=@Url.Content("/Content/js/bootstrap.min.js")></script>
+    <!-- Plugins js -->
+    <script src=@Url.Content("/Content/js/plugins.js")></script>
+    <!-- Active js -->
+    <script src=@Url.Content("/Content/js/active.js")></script>
+    <!-- Product Catagories Area Start -->
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg">
+                    <div class="card-header bg-dark text-white text-center">
+                        <h4>Login</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="@Url.Action("Login", "Home")" method="post">
+                            @Html.AntiForgeryToken()
+
+                            <!-- Email Field -->
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email" name="Email" placeholder="Enter email" required>
+                            </div>
+
+                            <!-- Password Field -->
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" name="Password" placeholder="Password" required>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-dark btn-block">Login</button>
+                        </form>
+                    </div>
+
+                    <!-- Card Footer -->
+                    <div class="card-footer text-center">
+                        <small>Don't have an account? <a href="@Url.Action("Register", "Home")">Sign up</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
